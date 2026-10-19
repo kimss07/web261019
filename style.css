@@ -1,167 +1,157 @@
-/* 기본 리셋 */
-* {
+body {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    min-height: 100vh;
     box-sizing: border-box;
+    margin: 0;
+    padding: 16px;
+    color: #f5f5f5;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+main,
+.top,
+.hero,
+footer {
+    max-width: 1100px;
+    margin: 0 auto 24px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: 'Noto Sans KR', sans-serif;
-    background-color: #141414;
-    color: #ffffff;
-    line-height: 1.5;
-}
-
-/* 상단 헤더 */
-header.top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: #000;
-}
-
-header.top h1 {
-    font-size: 1.5rem;
-}
-
-header nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-
-header nav a {
+nav a {
     color: #fff;
     text-decoration: none;
 }
 
-/* 히어로 영역: 배경 이미지(backdrop_path) 지정 */
 .hero {
-    text-align: center;
-    padding: 100px 20px;
-    /* 어두운 반투명 필터 + TMDB backdrop 배경 이미지 */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                      url("https://image.tmdb.org/t/p/w1280/r08LxMJCbf1SiJIWeyH9aJmdqwC.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://image.tmdb.org/t/p/w1280/r08LxMJCbf1SiJIWeyH9aJmdqwC.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-}
-
-.hero h2 {
-    font-size: 2.2rem;
-    margin-bottom: 8px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-.hero p {
-    font-size: 1.1rem;
-    color: #ddd;
-}
-
-/* 영화 보드 (가로 정렬 및 반응형) */
-.board {
+    min-height: 40vh;
+    padding: 24px;
+    box-sizing: border-box;
+    color: #fff;
+    border-radius: 12px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    gap: 24px;
-    padding: 40px 20px;
-    max-width: 1400px;
-    margin: 0 auto;
 }
 
-/* 개별 카드 및 마우스 호버 시 노란색 빛 효과 */
+h1,
+footer {
+    color: #fff;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
 .card {
     position: relative;
-    flex: 1 1 200px;
-    max-width: 240px;
+    /* width: 260px; */
     border-radius: 12px;
     overflow: hidden;
-    background-color: #222;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    border: 2px solid transparent;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    color: #222222;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: rise 0.6s backwards;
 }
 
-/* 마우스 올렸을 때: 카드 확대 + 노란색 글로우 테두리 */
+.card:nth-child(2) {
+    animation-delay:
+        0.1s;
+}
+
+.card:nth-child(3) {
+    animation-delay:
+        0.2s;
+}
+
+.card:nth-child(4) {
+    animation-delay:
+        0.3s;
+}
+
+.card:nth-child(5) {
+    animation-delay:
+        0.4s;
+}
+
 .card:hover {
     transform: translateY(-8px);
-    border-color: #ffd700;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 8px 16px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 12px 32px rgba(255, 193, 7, 0.6);
 }
 
-/* 포스터 이미지 */
+.info {
+    padding: 12px;
+}
+
 .poster {
     width: 100%;
-    height: auto;
     display: block;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
 }
 
-/* 평점 뱃지 */
 .badge {
     position: absolute;
     top: 12px;
     right: 12px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #ffbd00;
+    background: #ffc107;
+    color: #222;
+    padding: 4px 10px;
+    border-radius: 999px;
     font-weight: bold;
-    padding: 4px 8px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    z-index: 2;
+    animation: pulse 1s infinite;
 }
 
-/* 마우스 올렸을 때 나타나는 오버레이 상자 */
-.info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    background: rgba(0, 0, 0, 0.85);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+@keyframes pulse {
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
 }
 
-.card:hover .info {
-    opacity: 1;
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px);
+    }
 }
 
-.info h2 {
-    font-size: 1.1rem;
-    margin-bottom: 4px;
-    color: #fff;
+@media (min-width: 600px) {
+    nav ul {
+        flex-direction: row;
+        gap: 20px;
+    }
 }
 
-.info .year {
-    font-size: 0.8rem;
-    color: #aaa;
-    margin-bottom: 10px;
-}
+@media (min-width: 1024px) {
+    .hero {
+        min-height: 60vh;
+    }
 
-.info .overview {
-    font-size: 0.8rem;
-    color: #ddd;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* 하단 소개 및 푸터 */
-#about {
-    padding: 40px;
-    text-align: center;
-    background-color: #1a1a1a;
-    margin-top: 40px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 0.8rem;
-    color: #777;
+    .hero h2 {
+        font-size: 3rem;
+    }
 }
