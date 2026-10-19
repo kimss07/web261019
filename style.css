@@ -37,7 +37,9 @@ nav a {
 }
 
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://image.tmdb.org/t/p/w1280/r08LxMJCbf1SiJIWeyH9aJmdqwC.jpg");
+    /* 외부 URL 대신 로컬/상대 경로 이미지를 사용하거나, 백업 단색 배경 지정 */
+    background-color: #1a2639;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./images/hero-bg.jpg");
     background-size: cover;
     background-position: center;
     min-height: 40vh;
@@ -63,35 +65,21 @@ footer {
 
 .card {
     position: relative;
-    /* width: 260px; */
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     background: #fff;
     color: #222222;
     transition: transform 0.3s, box-shadow 0.3s;
-    animation: rise 0.6s backwards;
+    animation: rise 0.6s ease-out forwards;
 }
 
-.card:nth-child(2) {
-    animation-delay:
-        0.1s;
-}
-
-.card:nth-child(3) {
-    animation-delay:
-        0.2s;
-}
-
-.card:nth-child(4) {
-    animation-delay:
-        0.3s;
-}
-
-.card:nth-child(5) {
-    animation-delay:
-        0.4s;
-}
+/* 카드가 늘어나도 자동으로 지연 시간이 적용되도록 설정 */
+.card:nth-child(1) { animation-delay: 0s; }
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.2s; }
+.card:nth-child(4) { animation-delay: 0.3s; }
+.card:nth-child(5) { animation-delay: 0.4s; }
 
 .card:hover {
     transform: translateY(-8px);
@@ -118,15 +106,15 @@ footer {
     padding: 4px 10px;
     border-radius: 999px;
     font-weight: bold;
-    animation: pulse 1s infinite;
+    animation: pulse 1s infinite alternate;
 }
 
+/* @keyframes 구문 정상화 (from -> to) */
 @keyframes pulse {
-    100% {
+    0% {
         transform: scale(1);
     }
-
-    50% {
+    100% {
         transform: scale(1.15);
     }
 }
@@ -134,8 +122,11 @@ footer {
 @keyframes rise {
     from {
         opacity: 0;
-        transform:
-            translateY(20px);
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
