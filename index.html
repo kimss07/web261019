@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>김성수 :: 내 영화 보드</title>
+    <title>내 영화 보드</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Diphylleia&family=Gowun+Dodum&family=Noto+Sans+KR:wght@100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -24,16 +24,16 @@
             </ul>
         </nav>
     </header>
-
-    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://image.tmdb.org/t/p/w1280/r08LxMJCbf1SiJIWeyH9aJmdqwC.jpg');">
-    <h2>요즘 내가 고른 영화 다섯 편</h2>
-    <p>포스터 위에 마우스를 올려 보세요.</p>
-</section>
+    <section class="hero">
+        <h2>요즘 내가 고른 영화 다섯 편</h2>
+        <p>포스터 위에 마우스를 올려 보세요.</p>
+    </section>
 
     <main>
         <section class="board" id="board">
             <article class="card">
-                <img class="poster" src="https://image.tmdb.org/t/p/w342//mt6uZzy7DAsncHlGGzMsyNgLR6v.jpg" alt="영화 제목 포스터">
+                <img class="poster" src="https://image.tmdb.org/t/p/w342/mt6uZzy7DAsncHlGGzMsyNgLR6v.jpg"
+                    alt="스파이더맨: 브랜드 뉴 데이 포스터">
                 <span class="badge">8.4</span>
                 <div class="info">
                     <h2>스파이더맨: 브랜드 뉴 데이</h2>
@@ -42,43 +42,49 @@
                 </div>
             </article>
             <article class="card">
-                <img class="poster" src="https://image.tmdb.org/t/p/w342//hjki9weYYVABvkpZbX5jBOmKXXv.jpg" alt="영화 제목 포스터">
+                <img class="poster" src="https://image.tmdb.org/t/p/w342/hjki9weYYVABvkpZbX5jBOmKXXv.jpg"
+                    alt="스파이더맨: 홈커밍 포스터">
                 <span class="badge">7.3</span>
                 <div class="info">
                     <h2>스파이더맨: 홈커밍</h2>
                     <p class="year">2017-07-05</p>
-                    <p class="overview">토니 스타크의 제안을 받고 시빌 워에 참여한 피터 파커는 다음 임무가 언제일지 설렘을 안고 하루하루를 보낸다. 토니는 MIT 진학 준비에 전념할 것을 권하지만 친절한 이웃에 머무는 것은 피터의 성에 차지 않는다. 한편 어벤져스 군단과 외계 세력의 전투로 생긴 산업폐기물을 처리하던 아드리안 툼즈는 그 일이 토니 스타크와 정부에 넘어가면서 하루아침에 빈털터리가 된다. 이에 앙심을 품은 아드리안은 외계 첨단무기를 훔쳐서 개조하는 빌런이 되고, 그의 존재를 알게 된 피터는 도움을 빌리지 않고 자기가 일을 해결해보려고 한다.</p>
+                    <p class="overview">러시아 생물공학자 네코비치 박사는 비행기 내에서 이단 헌트로 변장한 앰브로즈에게 벨레로폰을 탈취당한 후 살해된다. IMF 요원 이단 헌트는
+                        네코비치 박사가 테러리스트 앰브로즈에게 탈취당한 것이 무엇인지 알아내기 위해 파견된다. 키메라라는 것이 인플루엔자를 없애기 위한 완벽한 치료제인 벨레로폰을 유전적으로
+                        조합하다 부수적으로 만들어진 악성 바이러스라는 사실을 알아낸 헌트는 임무를 위해 앰브로즈의 전 애인 니아 홀을 포섭한다. 헌트는 니아와 사랑에 빠지지만 키메라 바이러스를
+                        파괴하기 위해 니아를 앰브로즈에게 보내는데...</p>
                 </div>
             </article>
             <article class="card">
-                <img class="poster" src="https://image.tmdb.org/t/p/w342//a1Kup5VnmxjAHnsT3Sz7RtrC9UU.jpg" alt="영화 제목 포스터">
+                <img class="poster" src="https://image.tmdb.org/t/p/w342/a1Kup5VnmxjAHnsT3Sz7RtrC9UU.jpg"
+                    alt="어메이징 스파이더맨 포스터">
                 <span class="badge">6.7</span>
                 <div class="info">
                     <h2>어메이징 스파이더맨</h2>
-                    <p class="year">2012-06-23</p>
+                    <p class="year">2006년 4월 25일 개봉</p>
                     <p class="overview">어릴적 사라진 부모 대신 삼촌 내외와 살고 있는 피터 파커는 평범한 학교 생활을 하며 일상을 보내고, 같은 학교 학생 그웬 스테이시와 첫사랑에 빠져 우정과 사랑, 그리고 둘 만의 비밀을 키워나간다. 어느 날 아버지가 사용했던 가방을 발견하고 부모님의 실종사건에 대한 의심을 품게 된 그는 숨겨져 왔던 과거의 비밀을 추적하게 된다. 아버지의 옛 동료 코너스 박사의 실험실을 찾아가게 된 피터는 우연한 사고로 특별한 능력을 갖게 되고, 피터의 도움으로 연구를 완성한 코너스 박사는 자신의 숨겨진 자아인 악당 리자드를 탄생시키는데...</p>
                 </div>
             </article>
             <article class="card">
-                <img class="poster" src="https://image.tmdb.org/t/p/w342//d9V6Q9vpVpmaca7vwSUbCajtDb3.jpg" alt="영화 제목 포스터">
+                <img class="poster" src="https://image.tmdb.org/t/p/w342/d9V6Q9vpVpmaca7vwSUbCajtDb3.jpg"
+                    alt="스파이더맨: 뉴 유니버스 포스터">
                 <span class="badge">8.4</span>
                 <div class="info">
                     <h2>스파이더맨: 뉴 유니버스</h2>
                     <p class="year">2018-12-06</p>
                     <p class="overview">평범한 10대 마일스 모랄레스는 우연히 방사능 거미에 물려 스파이더맨 능력을 가지게 된다. 혼란스러워하던 마일스는 악당과 싸우고 있는 피터 파커를 마주치게 되고 피터 파커는 마일스가 자신과 같은 능력을 가지고 있음을 직감한다. 여러 개의 평행세계가 존재한다는 것을 알게 된 마일스와 피터 파커는 이후 스파이더우먼 스파이더 그웬, 스파이더맨 누아르, 스파이더햄 등 평행세계 속 공존하는 모든 스파이더맨들을 만나게 되는데... 하나의 유니버스에서 만나 팀을 결성한 스파이더맨들은 과연 세계를 구할 수 있을까?</p>
                 </div>
+
             </article>
             <article class="card">
-                <img class="poster" src="https://image.tmdb.org/t/p/w342//fvqoI9r1GU2EFkc0xjZ6dKCuDVR.jpg" alt="영화 제목 포스터">
+                <img class="poster" src="https://image.tmdb.org/t/p/w342/fvqoI9r1GU2EFkc0xjZ6dKCuDVR.jpg"
+                    alt="스파이더맨: 노 웨이 홈 포스터">
                 <span class="badge">7.9</span>
                 <div class="info">
                     <h2>스파이더맨: 노 웨이 홈</h2>
-                    <p class="year">2021-12-15</p>
-                    <p class="overview">미스테리오의 계략으로 세상에 정체가 탄로난 스파이더맨 피터 파커는 하루 아침에 평범한 일상을 잃게 된다. 문제를 해결하기 위해 닥터 스트레인지를 찾아가 도움을 청하지만 뜻하지 않게 멀티버스가 열리면서 각기 다른 차원의 불청객들이 나타난다. 닥터 옥토퍼스를 비롯해 스파이더맨에게 깊은 원한을 가진 숙적들의 강력한 공격에 피터 파커는 사상 최악의 위기를 맞게 되는데…</p>
+                    <p class="year">2021미스테리오의 계략으로 세상에 정체가 탄로난 스파이더맨 피터 파커는 하루 아침에 평범한 일상을 잃게 된다. 문제를 해결하기 위해 닥터 스트레인지를 찾아가 도움을 청하지만 뜻하지 않게 멀티버스가 열리면서 각기 다른 차원의 불청객들이 나타난다. 닥터 옥토퍼스를 비롯해 스파이더맨에게 깊은 원한을 가진 숙적들의 강력한 공격에 피터 파커는 사상 최악의 위기를 맞게 되는데…</p>
                 </div>
             </article>
         </section>
-
         <section id="about">
             <h2>이 보드에 대하여</h2>
             <p>만든 사람과 영화를 고른 기준을 한두 문장으로 적습니다.</p>
@@ -91,6 +97,7 @@
             This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
         <p>포스터와 영화 정보: TMDB (https://www.themoviedb.org)</p>
     </footer>
+
 </body>
 
 </html>
